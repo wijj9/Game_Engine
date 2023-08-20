@@ -71,7 +71,7 @@ function game() {
         console.log("You Won!")
     }
     else {
-        return console.log("Draw")
+        return console.log("Draw ")
     }
 }
  game()
