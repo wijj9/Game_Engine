@@ -1,3 +1,38 @@
+let result = 0;
+let score_player = 0;
+let score_computer = 0;
+
+let game_over = false;
+
+const playerSelection = document.querySelectorAll('.choice-container');
+
+
+const Player = document.querySelector(".player_score");
+const Computer = document.querySelector(".computer_score");
+const Result = document.querySelector(".result");
+
+const Image_To_Change_C = document.getElementById('computer_image')
+
+const Image_To_Change_P = document.getElementById('player_image')
+
+
+const result_list = document.querySelector(".result");
+const restart_button = document.createElement("button");
+
+let currentSelection = null;
+
+
+const Restart = document.querySelector(".restart");
+const Return = document.querySelector(".return");
+const X = document.querySelector(".close-button");
+
+
+
+function getHome() {
+    window.location.href = "../../index.html";
+}
+
+
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random()*3) + 1;
     if(randomNumber === 1) {
@@ -36,39 +71,26 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+function showPopup() {
+    document.getElementById('popup-container').style.display = 'flex';
+    Restart.addEventListener("click", restart);
+    X.addEventListener("click",restart);
+    Return.addEventListener("click",getHome);
 
-let result = 0;
-let score_player = 0;
-let score_computer = 0;
+}
 
-let game_over = false;
+function hidePopup() {
+    document.getElementById('popup-container').style.display = 'none';
+}
 
-const playerSelection = document.querySelectorAll("button");
 
-const Player = document.querySelector(".Player");
-const Computer = document.querySelector(".Computer");
-const Result = document.querySelector(".Result");
-
-const result_list = document.querySelector(".Result_List");
-
-const restart_button = document.createElement("button");
 
 
 function restart() {
-    result_list.removeChild(restart_button);
-    Player.textContent = `Player: 0`;
-    Computer.textContent = `Computer: 0`;
-
-    playerSelection.forEach(selection => selection.addEventListener("click", handle_selection));
-
-    result = 0;
-    score_player = 0;
-    score_computer = 0;
-    game_over = false;
+    location.reload();
 }
 
 function handle_End_Game(e) {
-
 
     if (score_computer === 5) {
         Result.textContent = "You lost :( ,Computer Won!";
@@ -80,41 +102,61 @@ function handle_End_Game(e) {
 
     if(game_over) {
 
-        playerSelection.forEach(selection => selection.removeEventListener("click", handle_selection))
+        playerSelection.forEach(selection => selection.removeEventListener("click", handle_selection));
 
-        restart_button.textContent = "Restart Game";
-        restart_button.classList.add("restart")
-        restart_button.addEventListener("click", restart);
-        result_list.appendChild(restart_button);
+        showPopup();
     }
 }
 
 
     function handle_selection(event) {
 
-        let selection = event.target.textContent;
+        let selection = event.target.closest(".game_selection");
 
-        let computerChoice = getComputerChoice();
-        if (selection === "Rock") {
-            result = playRound("Rock", computerChoice);
-        } else if (selection === "Paper") {
-            result = playRound("Paper", computerChoice);
-        } else if (selection === "Scissors") {
-            result = playRound("Scissors", computerChoice);
+
+        if (currentSelection){
+            currentSelection.classList.remove('clicked')
         }
 
 
+        selection.classList.toggle('clicked');
 
-        if (result === 1) {
-            score_player++
-            Player.textContent = `Player: ${score_player}`;
-        } else if (result === -1) {
-            score_computer++
-            Computer.textContent = `Computer: ${score_computer}`;
+
+
+        currentSelection = selection;
+
+        if(selection) {
+            const choice = selection.querySelector('.game_selection_text').textContent.toLowerCase();
+            const computerChoice = getComputerChoice().toLowerCase();
+
+
+
+            Image_To_Change_P.src = "./images/" + choice + ".png";
+            Image_To_Change_C.src = "./images/" + computerChoice + ".png";
+
+
+            if (choice === "rock") {
+                result = playRound("Rock", computerChoice);
+            } else if (choice === "paper") {
+                result = playRound("Paper", computerChoice);
+            } else if (choice === "scissors") {
+                result = playRound("Scissors", computerChoice);
+            }
+
+
+            if (result === 1) {
+                score_player++;
+                Player.textContent = `SCORE: ${score_player}`;
+            } else if (result === -1) {
+                score_computer++;
+                Computer.textContent = `SCORE: ${score_computer}`;
+            }
         }
 
         handle_End_Game();
     }
+
+
     playerSelection.forEach(selection => selection.addEventListener("click", handle_selection));
 
 
