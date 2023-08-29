@@ -29,7 +29,7 @@ const X = document.querySelector(".close-button");
 
 
 function getHome() {
-    window.location.href = "../../index.html";
+    window.location.href = "../../../index.html";
 }
 
 

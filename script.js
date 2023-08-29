@@ -17,7 +17,7 @@ function search() {
         console.log(user_input);
         if(user_input.toUpperCase().includes(word)) {
             console.log("if == true...")
-            window.location.href = "./Games/Rock_Paper_Scissors/index.html"
+            window.location.href = "./Home/Games/Rock_Paper_Scissors/index.html"
             break;
         }
     }
