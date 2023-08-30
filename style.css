@@ -17,6 +17,29 @@ button {
   border-radius: 8px;
   background: #eee;
   padding: 8px 16px;
+
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: lightgrey;
+
+  border-bottom: 1px solid;
+  transform: translate3d(-1%, 1%, -3px);
+  transition: all 0.1s ease-in;
+}
+
+button:active {
+  background-color: #70757a;
+}
+button.clicked {
+
+  transform: translate3d(-1%, 1%, -5px);
+  transition: all 0.1s ease-out;
 }
 
 input {
@@ -30,23 +53,42 @@ input {
 .header {
   display: flex;
   justify-content: space-between;
+
+  padding: 10px;
+  /*background-color: #333;*/
+  color: #fff;
+
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 50px;
+  min-height: 92px;
 }
 
 .footer {
   display: flex;
   justify-content: space-between;
-  margin-top: 35px;
-  background-color: #eeeeee;
+  color: #70757a;
+
+  padding: 10px;
+  margin-left: 0;
+  background-color: #f2f2f2;/*#eeeeee;*/
 }
 
 .home {
   display: flex;
   flex-direction: column;
-  gap: 350px;
+  justify-content: space-between;
+  min-height: 100vh;
+
 }
 
-.content {
-  text-align: center;
+.filler {
+  flex-grow: 1;
 }
 
 .left-links {
@@ -70,4 +112,39 @@ a {
 ul {
   list-style-type: none;
   gap: 16px;
+
+
+}
+
+
+/*******************************************/
+@media screen and (max-width: 768px) {
+  .home {
+    padding: 5px; /* Reduce padding for smaller screens */
+  }
+  ul {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 10px;
+  }
+  input {
+    width: 350px;
+  }
+
+  button:hover {
+    border-bottom: initial;
+    transform: initial;
+    transition: initial;
+  }
+
+  button:active {
+    background-color: #70757a;
+  }
+  button.clicked {
+
+    transform: translate3d(-1%, 1%, -5px);
+    transition: all 0.1s ease-out;
+  }
 }

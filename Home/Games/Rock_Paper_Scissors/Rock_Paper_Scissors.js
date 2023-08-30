@@ -1,7 +1,7 @@
 let result = 0;
 let score_player = 0;
 let score_computer = 0;
-
+let Result = "";
 let game_over = false;
 
 const playerSelection = document.querySelectorAll('.choice-container');
@@ -9,22 +9,22 @@ const playerSelection = document.querySelectorAll('.choice-container');
 
 const Player = document.querySelector(".player_score");
 const Computer = document.querySelector(".computer_score");
-const Result = document.querySelector(".result");
+
 
 const Image_To_Change_C = document.getElementById('computer_image')
 
 const Image_To_Change_P = document.getElementById('player_image')
 
-
-const result_list = document.querySelector(".result");
-const restart_button = document.createElement("button");
-
 let currentSelection = null;
 
 
-const Restart = document.querySelector(".restart");
-const Return = document.querySelector(".return");
-const X = document.querySelector(".close-button");
+const Restart_Win = document.querySelector("#popup-container_win .restart");
+const Return_Win = document.querySelector("#popup-container_win .return");
+const X_Win = document.querySelector("#popup-container_win .close-button");
+
+const Restart_Lost = document.querySelector("#popup-container_lost .restart");
+const Return_Lost = document.querySelector("#popup-container_lost .return");
+const X_Lost = document.querySelector("#popup-container_lost .close-button");
 
 
 
@@ -71,40 +71,51 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function showPopup() {
-    document.getElementById('popup-container').style.display = 'flex';
-    Restart.addEventListener("click", restart);
-    X.addEventListener("click",restart);
-    Return.addEventListener("click",getHome);
-
+function showPopup_Win() {
+    document.getElementById('popup-container_win').style.display = 'flex';
+    Restart_Win.addEventListener("click", restart);
+    X_Win.addEventListener("click",restart);
+    Return_Win.addEventListener("click",getHome);
 }
+
+function showPopup_Lost() {
+    document.getElementById('popup-container_lost').style.display = 'flex';
+    Restart_Lost.addEventListener("click", restart);
+    X_Lost.addEventListener("click",restart);
+    Return_Lost.addEventListener("click",getHome);
+}
+
 
 function hidePopup() {
-    document.getElementById('popup-container').style.display = 'none';
+    document.getElementById('popup-container_lost').style.display = 'none';
+    document.getElementById('popup-container_win').style.display = 'none';
 }
-
-
 
 
 function restart() {
+    Result = "";
     location.reload();
 }
 
-function handle_End_Game(e) {
+function handle_End_Game() {
 
     if (score_computer === 5) {
-        Result.textContent = "You lost :( ,Computer Won!";
+        Result = "Lost";
         game_over = true;
     } else if (score_player === 5) {
-        Result.textContent = "You Won! Congrats";
+        Result = "Win";
         game_over = true;
     }
 
     if(game_over) {
-
         playerSelection.forEach(selection => selection.removeEventListener("click", handle_selection));
+        if (Result === "Win") {
+            showPopup_Win();
+        }
+        else {
+            showPopup_Lost()
+        }
 
-        showPopup();
     }
 }
 
@@ -113,22 +124,16 @@ function handle_End_Game(e) {
 
         let selection = event.target.closest(".game_selection");
 
-
         if (currentSelection){
             currentSelection.classList.remove('clicked')
         }
 
-
         selection.classList.toggle('clicked');
-
-
-
         currentSelection = selection;
 
         if(selection) {
             const choice = selection.querySelector('.game_selection_text').textContent.toLowerCase();
             const computerChoice = getComputerChoice().toLowerCase();
-
 
 
             Image_To_Change_P.src = "./images/" + choice + ".png";

@@ -26,6 +26,8 @@ function search() {
 function start() {
     console.log("starting...")
     Search_Button.addEventListener('click', function () {
+        Search_Button.classList.toggle('clicked');
+
         search();
     });
 }
