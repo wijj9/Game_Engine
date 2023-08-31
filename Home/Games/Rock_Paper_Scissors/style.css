@@ -87,12 +87,13 @@ header {
     justify-content: space-around;
     align-items: center;
 
-
     padding: 20px;
     height: 30rem;
 
-    max-width: 1500px; /* Set the maximum width for the container */
+    max-width: 1500px;
     margin: 0 auto;
+
+    touch-action: manipulation;
 }
 
 main {
@@ -403,5 +404,9 @@ button.return {
     width: 350px;
 
     user-select: none;
+}
+
+@media screen and (max-width: 768px) {
+
 }
 
