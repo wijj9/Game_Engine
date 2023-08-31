@@ -346,19 +346,23 @@ button.return {
     justify-content: center;
     align-items: center;
     z-index: 9999;
-
     user-select: none;
-}
 
+    filter: none;
+}
 #popup-content_win {
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
     text-align: center;
     width: 350px;
-
     user-select: none;
+
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    transform: perspective(500px) translateZ(80px);
+    backdrop-filter: blur(5px);
 }
+
 
 #popup-container_lost {
     display: none;

@@ -72,7 +72,9 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function showPopup_Win() {
-    document.getElementById('popup-container_win').style.display = 'flex';
+    /*document.getElementById('popup-container_win').style.display = 'flex';*/
+    document.getElementById('popup-container_win').style.display = 'block';
+
     Restart_Win.addEventListener("click", restart);
     X_Win.addEventListener("click",restart);
     Return_Win.addEventListener("click",getHome);
@@ -129,6 +131,8 @@ function handle_End_Game() {
         }
 
         selection.classList.toggle('clicked');
+        selection.classList.toggle('clicked');
+
         currentSelection = selection;
 
         if(selection) {
