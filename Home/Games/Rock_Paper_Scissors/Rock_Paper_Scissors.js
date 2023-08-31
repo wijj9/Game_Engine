@@ -151,10 +151,10 @@ function handle_End_Game() {
 
             if (result === 1) {
                 score_player++;
-                Player.textContent = `SCORE: ${score_player}`;
+                Player.innerHTML = `SCORE: <br> <br>${score_player}`;
             } else if (result === -1) {
                 score_computer++;
-                Computer.textContent = `SCORE: ${score_computer}`;
+                Computer.innerHTML = `SCORE: <br> <br> ${score_computer}`;
             }
         }
 

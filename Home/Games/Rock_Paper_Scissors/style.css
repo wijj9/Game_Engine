@@ -206,10 +206,21 @@ img {
 }
 
 .computer_score, .player_score {
-    border: 1px solid red;
-    height: 60px;
+    border-radius: 8px;
+    background-color: #f2f2f2;
+    padding: 10px;
     width: 150px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
 
+.computer_score {
+    border: 2px solid #e8a473;
+}
+
+.player_score {
+    border: 2px solid #3498db;
 }
 
 footer {
