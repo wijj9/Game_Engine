@@ -251,28 +251,7 @@ footer {
 
 /****************************************************************************/
 
-#pop_up {
-    background: white;
-    width: 480px;
-    border-radius: 10px;
-    box-shadow: 2px 4px 16px rgba(0,0,0,.2);
 
-    justify-content: space-around;
-    flex-shrink: 0;
-    padding: 18px;
-    gap: 16px;
-
-
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-
-    align-items: center;
-    z-index: 9999;
-}
 
 .top {
     display: flex;
@@ -407,6 +386,9 @@ button.return {
 }
 
 @media screen and (max-width: 768px) {
-
+    #popup-content_win, #popup-content_lost {
+        width: 80%;
+        max-width: 500px;
+    }
 }
 
