@@ -348,7 +348,6 @@ button.return {
     z-index: 9999;
     user-select: none;
 
-    filter: none;
 }
 #popup-content_win {
     background-color: #fff;
@@ -358,9 +357,6 @@ button.return {
     width: 350px;
     user-select: none;
 
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    transform: perspective(500px) translateZ(80px);
-    backdrop-filter: blur(5px);
 }
 
 
