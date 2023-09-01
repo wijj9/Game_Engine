@@ -24,7 +24,7 @@
     <div class="container">
         <div class="player_info">
             <div class="player">
-                <div class="player_score">SCORE: <br> <br>0</div>
+                <div class="player_score" id="p_s">SCORE: <br> <br><span id="score_p">0</span></div>
                 <img class="image" src="images/user.png" alt="user">
                 <div class="text">PLAYER</div>
                 <div id="image_p" class="choice">
@@ -39,7 +39,7 @@
 
         <div class="computer_info">
             <div class="computer">
-                <div class="computer_score">SCORE: <br> <br>0</div>
+                <div class="computer_score">SCORE: <br> <br><span id="score_c">0</span></div>
                 <img class="image" src="images/robot.png" alt="computer">
                 <div class="text">COMPUTER</div>
                 <div id="image_c" class="choice">
@@ -119,6 +119,8 @@
         </div>
     </div>
 </div>
+
+<div class="overlay" id="overlay"></div>
 
 <script src="Rock_Paper_Scissors.js"></script>
 

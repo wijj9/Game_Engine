@@ -73,7 +73,10 @@ function playRound(playerSelection, computerSelection) {
 
 function showPopup_Win() {
     /*document.getElementById('popup-container_win').style.display = 'flex';*/
-    document.getElementById('popup-container_win').style.display = 'block';
+    /*document.getElementById('popup-container_win').style.display = 'block';*/
+
+    document.getElementById('popup-container_win').classList.add('active');
+    document.getElementById('overlay').classList.add('active');
 
     Restart_Win.addEventListener("click", restart);
     X_Win.addEventListener("click",restart);
@@ -81,22 +84,55 @@ function showPopup_Win() {
 }
 
 function showPopup_Lost() {
-    document.getElementById('popup-container_lost').style.display = 'flex';
+    /*document.getElementById('popup-container_lost').style.display = 'flex';*/
+
+    document.getElementById('popup-container_lost').classList.add('active');
+    document.getElementById('overlay').classList.add('active');
+
     Restart_Lost.addEventListener("click", restart);
     X_Lost.addEventListener("click",restart);
     Return_Lost.addEventListener("click",getHome);
 }
 
 
-function hidePopup() {
-    document.getElementById('popup-container_lost').style.display = 'none';
-    document.getElementById('popup-container_win').style.display = 'none';
+function hidePopup_Win() {
+    document.getElementById('popup-container_win').classList.remove('active')
+    document.getElementById('overlay').classList.remove('active')
+}
+
+function hidePopup_Lost() {
+
+    document.getElementById('popup-container_lost').classList.remove('active')
+    document.getElementById('overlay').classList.remove('active')
 }
 
 
 function restart() {
+    if (Result === "Win") {
+        hidePopup_Win();
+    }
+    else {
+        hidePopup_Lost();
+    }
     Result = "";
-    location.reload();
+
+    let score_c = document.getElementById('score_c');
+    let score_p = document.getElementById('score_p');
+
+    score_p.textContent = '0';
+    score_c.textContent = '0';
+
+    score_computer = 0;
+    score_player = 0;
+
+    game_over = false;
+
+    Image_To_Change_P.src = "./images/default_choice.png";
+    Image_To_Change_C.src = "./images/default_choice.png";
+
+    playerSelection.forEach(selection => selection.addEventListener("click", handle_selection));
+
+    /*location.reload();*/
 }
 
 function handle_End_Game() {
@@ -155,10 +191,10 @@ function handle_End_Game() {
 
             if (result === 1) {
                 score_player++;
-                Player.innerHTML = `SCORE: <br> <br>${score_player}`;
+                Player.innerHTML = `SCORE: <br> <br><span id="score_p">${score_player}</span>`;
             } else if (result === -1) {
                 score_computer++;
-                Computer.innerHTML = `SCORE: <br> <br> ${score_computer}`;
+                Computer.innerHTML = `SCORE: <br> <br> <span id="score_c">${score_computer}</span>`;
             }
         }
 
