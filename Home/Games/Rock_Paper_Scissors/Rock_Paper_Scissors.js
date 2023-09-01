@@ -158,6 +158,14 @@ function handle_End_Game() {
 }
 
 
+function handlePress() {
+    this.classList.toggle('clicked');
+}
+
+function handleRelease() {
+    this.classList.toggle('clicked');
+}
+
     function handle_selection(event) {
 
         let selection = event.target.closest(".game_selection");
@@ -166,8 +174,11 @@ function handle_End_Game() {
             currentSelection.classList.remove('clicked')
         }
 
-        selection.classList.toggle('clicked');
-        selection.classList.toggle('clicked');
+        selection.addEventListener('mousedown', handlePress);
+        selection.addEventListener('touchstart', handlePress);
+
+        selection.addEventListener('mouseup', handleRelease);
+        selection.addEventListener('touchend', handleRelease);
 
         currentSelection = selection;
 
