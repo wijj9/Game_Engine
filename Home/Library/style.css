@@ -41,11 +41,11 @@ body {
     flex-direction: column;
 }
 
-.panel1 { background-image:url("../assets/password.jpg"); }
-.panel2 { background-image:url("../assets/rock_paper_scissors-min.jpg"); }
-.panel3 { background-image:url("../assets/signature.jpg"); }
-.panel4 { background-image:url("../assets/tic_tac_toe.jpg"); }
-.panel5 { background-image:url("../assets/light.jpg"); }
+.panel1 { background-image:url("assets/password.jpg"); }
+.panel2 { background-image:url("assets/rock_paper_scissors-min.jpg"); }
+.panel3 { background-image:url("assets/signature.jpg"); }
+.panel4 { background-image:url("assets/tic_tac_toe.jpg"); }
+.panel5 { background-image:url("assets/light.jpg"); }
 
 
 /* Flex Items */
