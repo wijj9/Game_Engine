@@ -4,11 +4,24 @@
     box-sizing: border-box;
 }
 
+
+
 body {
     display: grid;
     justify-content: center;
     align-items: center;
     height: 100vh;
+
+}
+.night-mode-on {
+    background-color: #191a1a;
+    color: white;
+    transition: 0.4s ease-in-out;
+}
+.night-mode-off {
+    background-color: #fff;
+    color: black;
+    transition: 0.4s ease-in-out;
 }
 
 .switch-container {

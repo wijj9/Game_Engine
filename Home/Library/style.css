@@ -29,8 +29,8 @@ body {
     /* Safari transitionend event.propertyName === flex */
     /* Chrome + FF transitionend event.propertyName === flex-grow */
     transition:
-            font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
-            flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+            font-size 0.5s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+            flex 0.5s cubic-bezier(0.61,-0.19, 0.7,-0.11),
             background 0.2s;
     font-size: 20px;
     background-size: cover;
@@ -41,10 +41,10 @@ body {
     flex-direction: column;
 }
 
-.panel1 { background-image:url("assets/password.jpg"); }
-.panel2 { background-image:url("assets/rock_paper_scissors-min.jpg"); }
-.panel3 { background-image:url("assets/signature.jpg"); }
-.panel4 { background-image:url("assets/tic_tac_toe.jpg"); }
+.panel1 { background-image:url("assets/password-min.jpg"); }
+.panel2 { background-image:url("assets/Rock_min.jpg"); }
+.panel3 { background-image:url("assets/signature-min.jpg"); }
+.panel4 { background-image:url("assets/tic_tac_toe-min.jpg"); }
 .panel5 { background-image:url("assets/light.jpg"); }
 
 
@@ -79,6 +79,42 @@ body {
     flex: 5;
     font-size: 40px;
 }
+
+.custom-button {
+    background-color: #007BFF; /* Blue background color */
+    color: #fff; /* White text color */
+    padding: 10px 20px; /* Padding around the text */
+    border: none; /* Remove default button border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Add a pointer cursor on hover */
+
+    /* Fixed width and height */
+    width: 150px;
+    height: 50px;
+}
+
+/* Add hover effect */
+.custom-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Additional styling for the panel containing the button */
+.panel-with-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Adjust button alignment within the panel */
+.panel-with-button .custom-button {
+    margin-top: 10px;
+}
+
+.last_child {
+    display: flex;
+    flex-direction: column;
+}
+
 
 @media only screen and (max-width: 600px) {
     .panel p {
