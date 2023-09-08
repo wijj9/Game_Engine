@@ -42,7 +42,7 @@ button.clicked {
   transition: all 0.1s ease-out;
 }
 
-input {
+#user_input {
   border: 1px solid #ddd;
   border-radius: 16px;
   padding: 8px 24px;
@@ -87,7 +87,7 @@ input {
 
 }
 
-.filler {
+#bd {
   flex-grow: 1;
 }
 
@@ -105,7 +105,7 @@ input {
 a {
   /* this removes the line under our links */
   text-decoration: none;
-  color: gray;
+  color: grey;
   font-weight: bold;
 }
 
@@ -129,7 +129,7 @@ ul {
     margin-inline-end: 0;
     padding-inline-start: 10px;
   }
-  input {
+  #user_input {
     width: 350px;
   }
 
@@ -148,3 +148,140 @@ ul {
     transition: all 0.1s ease-out;
   }
 }
+
+
+/***************************************************************************************************/
+/*Toggle Switch*/
+
+
+#bd {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+
+}
+.night-mode-on {
+  background-color: black;
+  color: white;
+  transition: 0.4s ease-in-out;
+}
+.night-mode-off {
+  background-color: #dddddd;
+  color: white;
+  transition: 0.4s ease-in-out;
+}
+
+.light-mode-on {
+  background-color: #dddddd;
+}
+
+.switch-container {
+  width: 24em;
+  height: 10em;
+  border-radius: 10em;
+  position: fixed;
+}
+
+.unchecked {
+  box-shadow: 5px 5px 15px 5px #cfd8dc;
+}
+
+.checked {
+  background-color: #191a1a;
+}
+
+.disappear {
+  display: none;
+}
+
+.switch-color {
+  width: 22em;
+  height: 8em;
+  left: 1em;
+  top: 1em;
+  background: #c2e9f6;
+  border-radius: 10em;
+  z-index: -1;
+  position: absolute;
+  transition: all 500ms cubic-bezier(0.34, 1.36, 0.2, 1);
+}
+
+
+
+.toggle--label-background {
+  width: 10px;
+  height: 5px;
+  border-radius: 5px;
+  position: relative;
+  background: white;
+  left: 135px;
+  top: 45px;
+  transition: all 150ms ease-in;
+}
+
+.toggle--label {
+  width: 8em;
+  height: 8em;
+  border-radius: 4em;
+  background: #f6bf07;
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  z-index: 2;
+  cursor: pointer;
+}
+
+#switch:checked ~ label {
+  transform: translatex(14em) rotatez(360deg);
+  background-color: #191a1a;
+
+}
+
+#switch:checked ~ .switch-color {
+  background: #575757;
+
+}
+
+#switch ~ label {
+  transition: all 1s cubic-bezier(0.34, 1.36, 0.2, 1);
+}
+
+label::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 5em;
+  background-color: #f6bf07;
+  /*content: "\f185";/*"\f00d";*/
+  position: absolute;
+  left: 0.3em;
+  top: 0.3em;
+  color: #f6bf07;
+
+  /*content: url("../../Library/assets/dark.jpg");*/
+}
+#switch:checked ~ label::before {
+  opacity: 0;
+}
+
+label::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 5em;
+  content: "\f186";
+  position: absolute;
+  left: 0.3em;
+  top: 0.3em;
+  opacity: 0;
+  color: #ffffff;
+}
+#switch:checked ~ label::after {
+  opacity: 1;
+}
+
+
+
+
+
+
+

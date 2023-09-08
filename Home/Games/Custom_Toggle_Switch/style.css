@@ -1,3 +1,8 @@
+:root {
+    --gray-border: #e8e8ea;
+    --gray-dots: #e8e8ea;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,13 +10,11 @@
 }
 
 
-
 body {
-    display: grid;
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-
 }
 .night-mode-on {
     background-color: #191a1a;
@@ -19,7 +22,7 @@ body {
     transition: 0.4s ease-in-out;
 }
 .night-mode-off {
-    background-color: #fff;
+    background-color: #00aeff;
     color: black;
     transition: 0.4s ease-in-out;
 }
@@ -28,8 +31,14 @@ body {
     width: 24em;
     height: 10em;
     border-radius: 10em;
-    box-shadow: 5px 5px 15px 5px #cfd8dc;
-    position: relative;
+    /*box-shadow: 5px 5px 15px 5px #cfd8dc;*/
+    position: fixed;
+    background-color: white;
+
+}
+
+.clicked {
+    background-color: black;
 }
 
 input {
@@ -41,32 +50,47 @@ input {
     height: 8em;
     left: 1em;
     top: 1em;
-    background: #cfd8dc;
+    background: #c2e9f6;
     border-radius: 10em;
     z-index: -1;
     position: absolute;
     transition: all 500ms cubic-bezier(0.34, 1.36, 0.2, 1);
 }
 
+
+
+.toggle--label-background {
+    width: 10px;
+    height: 5px;
+    border-radius: 5px;
+    position: relative;
+    background: white;
+    left: 135px;
+    top: 45px;
+    transition: all 150ms ease-in;
+}
+
 label {
     width: 8em;
     height: 8em;
     border-radius: 4em;
-    background: white;
+    background: #f6bf07;
     position: absolute;
     top: 1em;
     left: 1em;
-    box-shadow: 2px 2px 10px 2px #cfd8dc;
     z-index: 2;
     cursor: pointer;
 }
 
 #switch:checked ~ label {
     transform: translatex(14em) rotatez(360deg);
+    background-color: #191a1a;
+
 }
 
 #switch:checked ~ .switch-color {
-    background: #00e676;
+    background: #575757;
+
 }
 
 #switch ~ label {
@@ -77,11 +101,14 @@ label::before {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     font-size: 5em;
-    content: "\f00d";
+    background-color: #f6bf07;
+    /*content: "\f185";/*"\f00d";*/
     position: absolute;
-    left: 0.42em;
+    left: 0.3em;
     top: 0.3em;
-    color: #e9182a;
+    color: #f6bf07;
+
+    /*content: url("../../Library/assets/dark.jpg");*/
 }
 #switch:checked ~ label::before {
     opacity: 0;
@@ -91,13 +118,27 @@ label::after {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     font-size: 5em;
-    content: "\f00c";
+    content: "\f186";
     position: absolute;
     left: 0.3em;
     top: 0.3em;
     opacity: 0;
-    color: #00e676;
+    color: #ffffff;
 }
 #switch:checked ~ label::after {
     opacity: 1;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
