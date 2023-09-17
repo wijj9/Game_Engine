@@ -279,7 +279,30 @@ label::after {
   opacity: 1;
 }
 
+/**************************/
+/*Search Bar*/
 
+.suggestions {
+  list-style-type: none;
+  position: absolute;
+  z-index: 1;
+  width: 28rem;/*450px;*/
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  display: none;
+}
+
+.suggestion-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.suggestion-item:hover {
+  background-color: #f1f1f1;
+}
 
 
 
