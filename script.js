@@ -47,8 +47,8 @@ const Programs_List = [
     { word: "Rock Paper Scissors", url: "./Home/Games/Rock_Paper_Scissors/index.html" },
     { word: "Password Generator", url: "./Home/Games/Password_Generator/index.html" },
     { word: "Signature Creator", url: "./Home/Games/Signature_Generator/index.html" },
-    { word: "Tic Tac Toe", url: "./Home/Games/Tic_Tac_Toe/index.html" },
     { word: "Toggle Switch", url: "./Home/Games/Custom_Toggle_Switch/index.html" },
+    { word: "Task List", url: "./Home/Games/TaskList/index.html" },
     // Add more suggestions with their respective URLs
 ];
 /*Variables*/
@@ -62,7 +62,7 @@ const suggestions = [
     "Rock Paper Scissors",
     "Password Generator",
     "Signature Creator",
-    "Tic Tac Toe",
+    "Task List",
     "Toggle Switch",
 ];
 
@@ -103,6 +103,10 @@ function search(input) {
     }
 }
 
+function close_suggestions() {
+    suggestionsList.style.display = "none";
+}
+
 function start() {
     Search_Button.addEventListener('click', function () {
         Search_Button.classList.toggle('clicked');
@@ -114,6 +118,13 @@ function start() {
             search()
         }
     });
+
+    document.body.addEventListener('click', function(event) {
+        if ( suggestionsList.style.display === "block" && !suggestionsList.contains(event.target)) {
+            close_suggestions();
+        }
+    });
+
 }
 window.onload = function () {
     /*container.style.backgroundColor = "#dddddd";*/
@@ -124,6 +135,7 @@ window.onload = function () {
     } else {
         disableDarkMode();
     }
+
 }
 
 window.addEventListener("beforeunload", function () {
