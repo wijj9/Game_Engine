@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Library</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+          rel="stylesheet"
+  />
+  <link rel="shortcut icon" href="./src/my_logo.png" />
+  <script
+          src="https://kit.fontawesome.com/4c536a6bd5.js"
+          crossorigin="anonymous"
+  ></script>
+
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <h1>Tasks</h1>
+    <button class="btn">Login</button>
+  </div>
+</header>
+
+<div id="add-btn">
+  <button class="add-button" id="add_task">+ Add Task</button>
+</div>
+
+
+<div class="tasks-grid" id="tasksGrid">
+
+</div>
+
+
+<footer>
+  <p>
+    Copyright ©
+    <!--suppress JSCheckFunctionSignatures -->
+    <script>
+      document.write(new Date().getFullYear())
+    </script>
+    Wajih Tarkhani
+  <a href="https://github.com/wijj9" target="_blank">
+    <i class="fab fa-github" aria-hidden="true"></i></a>
+  </p>
+</footer>
+
+<div id="popup-container">
+  <div id="popup-content">
+    <div class="top">
+      <h2 class="the_title">Add Task</h2>
+      <button class="close-button" id="close">✖</button>
+    </div>
+    <form id="task-form" class="middle">
+        <input class="input" type="text" placeholder="Task" data-siid="si_input_0" required maxlength="1000">
+        <input class="input" type="text" placeholder="Category" data-siid="si_input_1" required maxlength="200">
+        <textarea class="input" id="description" placeholder="Description" data-siid="si_input_2" required maxlength="10000"></textarea>
+        <button class="submit" id="submit_btn"><b>Submit</b></button>
+    </form>
+  </div>
+</div>
+
+
+<div class="overlay" id="overlay"></div>
+
+<script src="script.js"></script>
+</body>
+
+</html>

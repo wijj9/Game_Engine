@@ -1,7 +1,7 @@
 html {
     box-sizing: border-box;
     background: #ffc600;
-    font-family: 'helvetica neue';
+    font-family: 'helvetica neue', serif;
     font-size: 20px;
     font-weight: 200;
 }
@@ -46,6 +46,7 @@ body {
 .panel3 { background-image:url("assets/signature-min.jpg"); }
 .panel4 { background-image:url("assets/tic_tac_toe-min.jpg"); }
 .panel5 { background-image:url("assets/light.jpg"); }
+.panel6 { background-image:url("assets/tasklist.jpg"); }
 
 
 /* Flex Items */
@@ -81,24 +82,24 @@ body {
 }
 
 .custom-button {
-    background-color: #007BFF; /* Blue background color */
-    color: #fff; /* White text color */
-    padding: 10px 20px; /* Padding around the text */
-    border: none; /* Remove default button border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Add a pointer cursor on hover */
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 
     /* Fixed width and height */
     width: 150px;
     height: 50px;
 }
 
-/* Add hover effect */
+
 .custom-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0056b3;
 }
 
-/* Additional styling for the panel containing the button */
+
 .panel-with-button {
     display: flex;
     flex-direction: column;

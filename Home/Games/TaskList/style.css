@@ -1,0 +1,336 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+header {
+    display: block;
+}
+
+html {
+    /* footer support */
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 100px;
+}
+
+.header {
+    margin: 0;
+    background-color: #fffbfb;
+    box-shadow: rgba(0, 0, 0, 0.16) 0 1px 4px;
+}
+
+.header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    font-weight: bold;
+}
+button {
+    border: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    cursor: pointer;
+    outline: none;
+}
+
+.btn {
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: filter 0.15s ease-in-out;
+    font-weight: bold;
+    font-size: 20px;
+}
+.btn:hover {
+    filter: brightness(90%);
+}
+
+#add-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.add-button {
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: filter 0.15s ease-in-out;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.add-button:hover {
+    filter: brightness(90%);
+}
+
+
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    user-select: none;
+}
+
+
+.the_title {
+    flex: 1;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+    justify-content: center;
+
+    user-select: none;
+}
+
+.text {
+    user-select: none;
+}
+
+.restart, .return {
+    font-weight: bold;
+
+    user-select: none;
+}
+
+.icon {
+    color: royalblue;
+    font-size: 26px;
+    font-weight: 700;
+    background: lavender;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.close-button {
+    background: #eee;
+    border-radius: 50%;
+    color: #888;
+    font-weight: 400;
+    font-size: 16px;
+    height: 24px;
+    width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #eee;
+    padding: 0;
+
+    position: relative;
+    top: -10px;
+    right: -10px;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    transition: filter 0.15s ease-in-out;
+    filter: brightness(90%);
+}
+
+button {
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+button.restart {
+    background: royalblue;
+    border: 1px solid royalblue;
+    color: white;
+}
+
+button.return {
+    background: white;
+    border: 1px solid #ddd;
+    color: royalblue;
+    margin-left: 10px;
+}
+
+/***********************************************************************************/
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.6;
+}
+
+.overlay.active {
+    display: block;
+}
+
+#popup-container.active {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: rgba(0, 0, 0, 0.16) 0 1px 4px;
+    background-color: #f0eef1;
+}
+
+#popup-container {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 18px;
+    user-select: none;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    flex-direction: column;
+}
+
+
+#popup-content .middle {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input {
+    width: 100%;
+    height: 40px;
+    padding-left: 5px;
+    border-radius: 8px;
+    font-size: 20px;
+    border: none;
+    box-sizing: border-box;
+}
+
+#description {
+    width: 100%;
+    height: 150px;
+}
+
+.bottom .question {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#checkbox {
+    width: 20px;
+    height: 20px;
+    margin-top: 4px;
+    accent-color: white;
+}
+
+.submit {
+    width: 100%;
+    background-color: #79e079;
+}
+.submit:hover {
+    background-color: #32c232;
+    transition: filter 0.15s ease-in-out;
+}
+
+
+/*********** tasks grid *******************/
+
+.tasks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px
+}
+
+.task-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 20px;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0 1px 4px;
+    line-height: 1.2;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.task-info b {
+    margin-right: 10px;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.btn-light-red {
+    background-color: lightcoral;
+}
+
+.btn {
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: filter 0.15s ease-in-out;
+}
+.task-info {
+    display: flex;
+}
+
+textarea {
+    max-width: 100%;
+}
+
+.fa-github {
+    font-size: 24px;
+    color: black;
+    transition: transform 0.3s ease-in-out;
+}
+
+.fa-github:hover {
+    transform: rotate(360deg) scale(1.2);
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-weight: bold;
+    padding-bottom: 5px;
+    padding-top: 10px;
+    background-color: #a8a8a8;
+}
+
+body {
+    background-color: #f0eef1;
+}
