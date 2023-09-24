@@ -65,7 +65,7 @@ button.clicked {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding-top: 50px;
+  padding-top: 0;
   min-height: 92px;
 }
 
@@ -85,6 +85,10 @@ button.clicked {
   justify-content: space-between;
   min-height: 100vh;
 
+}
+
+.filler {
+    padding-top: 500px;
 }
 
 #bd {
@@ -112,10 +116,14 @@ a {
 ul {
   list-style-type: none;
   gap: 16px;
-
-
 }
 
+#user_input:focus {
+  outline: none;
+}
+#user_input:hover {
+  box-shadow: 0 1px 0 rgba(0,0,0,.15);
+}
 
 /*******************************************/
 @media screen and (max-width: 768px) {
@@ -293,6 +301,8 @@ label::after {
   border: 1px solid #ccc;
   border-top: none;
   display: none;
+
+  margin-left: 20px;
 }
 
 .suggestion-item {

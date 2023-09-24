@@ -7,32 +7,7 @@ const checkBox = document.getElementById("switch");
 
 let darkMode = localStorage.getItem("dark-mode");
 
-const enableDarkMode = () => {
-    page.classList.add("checked");
-    container.style.backgroundColor = "black";
-    container.classList.toggle("night-mode-on");
-    localStorage.setItem("dark-mode", "enabled");
-};
 
-const disableDarkMode = () => {
-    page.classList.remove("checked");
-    container.style.backgroundColor = "#dddddd";
-    container.classList.toggle("night-mode-off");
-    localStorage.setItem("dark-mode", "disabled");
-};
-
-if (darkMode === "enabled") {
-    enableDarkMode(); // set state of darkMode on page load
-}
-toggle_switch.addEventListener("click", function () {
-    /*dark_mode_on = !dark_mode_on;*/
-    darkMode = localStorage.getItem("dark-mode"); // update darkMode when clicked
-    if (darkMode === "disabled") {
-        enableDarkMode();
-    } else {
-        disableDarkMode();
-    }
-});
 
 
 
@@ -126,17 +101,7 @@ function start() {
     });
 
 }
-window.onload = function () {
-    /*container.style.backgroundColor = "#dddddd";*/
 
-    darkMode = localStorage.getItem("dark-mode"); // update darkMode when clicked
-    if (darkMode === "enabled") {
-        enableDarkMode();
-    } else {
-        disableDarkMode();
-    }
-
-}
 
 window.addEventListener("beforeunload", function () {
     // Reset the checkbox to its initial state (unchecked)
