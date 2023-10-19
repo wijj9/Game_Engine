@@ -41,12 +41,12 @@ body {
     flex-direction: column;
 }
 
-.panel1 { background-image:url("assets/password-min.jpg"); }
-.panel2 { background-image:url("assets/Rock_min.jpg"); }
-.panel3 { background-image:url("assets/signature-min.jpg"); }
+.panel1 { background-image:url("assets/password_reduced.jpg"); }
+.panel2 { background-image:url("assets/Rock_reduced.jpg"); }
+.panel3 { background-image:url("assets/signature-reduced.jpg"); }
 .panel4 { background-image:url("assets/tic_tac_toe-min.jpg"); }
-.panel5 { background-image:url("assets/light.jpg"); }
-.panel6 { background-image:url("assets/tasklist.jpg"); }
+.panel5 { background-image:url("assets/light_reduced.jpg"); }
+.panel6 { background-image:url("assets/tasklist_reduced.jpg"); }
 
 
 /* Flex Items */
