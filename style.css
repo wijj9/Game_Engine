@@ -61,22 +61,28 @@ button.clicked {
 }
 
 .content {
+  border: 2px solid red;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   padding-top: 0;
   min-height: 92px;
+
+  margin-bottom: 500px;
 }
 
 .footer {
   display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
   justify-content: space-between;
-  color: #70757a;
-
-  padding: 10px;
-  margin-left: 0;
-  background-color: #f2f2f2;/*#eeeeee;*/
+  width: 100%;
+  font-weight: bold;
+  padding-bottom: 5px;
+  padding-top: 10px;
+  background-color: #f2f2f2;
 }
 
 .home {
@@ -84,12 +90,9 @@ button.clicked {
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
-
 }
 
-.filler {
-    padding-top: 500px;
-}
+
 
 #bd {
   flex-grow: 1;
