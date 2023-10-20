@@ -5,7 +5,10 @@
 }
 
 body {
-    background-color: #3b3b98;
+    background-image: url("../../Library/assets/password_bg_reduced.jpg");
+    background-size: cover;
+    background-position: center center;
+
     color: #fff;
     font-family: 'Muli', sans-serif;
     display: flex;
