@@ -61,7 +61,6 @@ button.clicked {
 }
 
 .content {
-  border: 2px solid red;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -24,6 +24,9 @@ const Programs_List = [
     { word: "Signature Creator", url: "./Home/Games/Signature_Generator/index.html" },
     { word: "Toggle Switch", url: "./Home/Games/Custom_Toggle_Switch/index.html" },
     { word: "Task List", url: "./Home/Games/TaskList/index.html" },
+    { word: "Darknet Diaries", url: "https://darknetdiaries.com/episode/" },
+    { word: "Reddit", url: "https://www.reddit.com/" },
+    { word: "Image Resizer", url: "https://imageresizer.com/" },
     // Add more suggestions with their respective URLs
 ];
 /*Variables*/
@@ -39,6 +42,9 @@ const suggestions = [
     "Signature Creator",
     "Task List",
     "Toggle Switch",
+    "Darknet Diaries",
+    "Reddit",
+    "Image Resizer"
 ];
 
 function displaySuggestions() {
